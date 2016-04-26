@@ -33,6 +33,8 @@ gem 'bootstrap-sass', '~> 3.3.5.1'
 # Sprockets is a Rack-based asset packaging system that concatenates and serves JavaScript, CoffeeScript, CSS, LESS, Sass, and SCSS.
 gem 'sprockets', '2.11.0'
 
+gem 'simple_form'
+
 # Enables serving assets in production and setting your logger to standard out, both of which are 
 # required to run a Rails 4 application on a twelve-factor provider.
 gem 'rails_12factor', group: :production
