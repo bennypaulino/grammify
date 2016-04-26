@@ -35,6 +35,9 @@ gem 'sprockets', '2.11.0'
 
 gem 'simple_form'
 
+# User authentication
+gem 'devise', '>= 3.2.4'
+
 # Enables serving assets in production and setting your logger to standard out, both of which are 
 # required to run a Rails 4 application on a twelve-factor provider.
 gem 'rails_12factor', group: :production
