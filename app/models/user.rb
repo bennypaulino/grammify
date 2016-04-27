@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   # the following line is to avoid an ugly server exception to be thrown, and present the user with the standard devise error
   validates :username , uniqueness: {case_sensitive: false}, length: { minimum: 3, maximum: 20 }, presence: true
 
+  has_many :grams
+
   # Avoid any conflict between username and email being the same.
   def validate_username
     if User.where(email: username).exists?
