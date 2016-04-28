@@ -1,6 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe GramsController, type: :controller do
+	describe "grams#destroy" do
+		it "should allow a user to destroy grams" do
+			garbage = FactoryGirl.create(:gram)
+			delete :destroy, id: garbage.id
+			expect(response).to redirect_to root_path
+			garbage = Gram.find_by_id(garbage.id)
+			expect(garbage).to eq nil
+		end
+
+		it "should return a 404 message if we cannot find a gram with the id that is specified" do
+			delete :destroy, id: 'QUESADILLACAT'
+			expect(response).to have_http_status(:not_found)
+		end
+	end
+
 	describe "grams#update" do
 		it "should allow users to successfully update grams" do
 			blah = FactoryGirl.create(:gram, message: "Initial Value")
