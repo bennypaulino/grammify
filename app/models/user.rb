@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   validates :username , uniqueness: {case_sensitive: false}, length: { minimum: 3, maximum: 20 }, presence: true
 
   has_many :grams
+  has_many :comments
 
   # Avoid any conflict between username and email being the same.
   def validate_username
