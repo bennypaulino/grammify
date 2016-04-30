@@ -1,8 +1,13 @@
 class User < ActiveRecord::Base
+  # Virtual attribute for authenticating by either username or email
+  # This is in addition to a real persisted field like 'username'
+  attr_accessor :login
+
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys=>[:login]
+         :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [ :login ]
 
   # the following line is to avoid an ugly server exception to be thrown, and present the user with the standard devise error
   validates :username , uniqueness: {case_sensitive: false}, length: { minimum: 3, maximum: 20 }, presence: true
