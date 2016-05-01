@@ -1,30 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
-	#describe "comments#destroy action" do
-		#it "should allow a user to destroy a comment" do
-		#	g = FactoryGirl.create(:gram)
-
-		#	foot_in_mouth = FactoryGirl.create(:user)
-		#	sign_in foot_in_mouth
-		#	post :create, gram_id: g.id, comment: { message: "Instant regret" }
-
-		#	delete :destroy, id: foot_in_mouth
-		#end
-
-		#it "shouldn't allow a user to destroy a comment, if they didn't create it" do
-
-		#end
-
-		#it "should not let unauthenticated users destroy a comment" do
-
-		#end
-
-		#it "should return a 404 message if we cannot find a gram with the id that is specified" do
-
-		#end
-	#end
-
 	describe "comments#create action" do
 		it "should allow users to create comments on grams" do
 			sample_gram = FactoryGirl.create(:gram)
