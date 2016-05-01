@@ -12,10 +12,18 @@ body {
 	padding-top: 1em;
 }
 
+.top-nav a:hover {
+	color: #14619A;
+}
+
 .brand {
 	color: #125688;
 	font-size: 2.6em;
 	font-family: 'Cookie', cursive;
+}
+
+.brand:hover {
+	text-decoration: none;
 }
 
 .top-nav .add a {
