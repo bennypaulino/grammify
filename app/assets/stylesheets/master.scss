@@ -1,0 +1,131 @@
+body {
+	background-color: #fafafa;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.top-nav {
+	background-color: #fff;
+	border-bottom-color: #edeeee;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	height: 5em;
+	padding-top: 1em;
+}
+
+.top-nav a:hover {
+	color: #14619A;
+}
+
+.brand {
+	color: #125688;
+	font-size: 2.6em;
+	font-family: 'Cookie', cursive;
+}
+
+.brand:hover {
+	text-decoration: none;
+}
+
+.top-nav .add a {
+	font-weight: 400;
+	color: #125688;
+	font-size: 1.2em;
+	padding-left: .5em;
+	text-decoration: none;
+}
+
+.top-nav .add {
+	margin-top: 13px;
+}
+
+.card {
+	background-color: #fff;
+	border-radius: .25rem;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+	border: 1px solid #e8e8e8;
+	margin-top: 4rem;
+	padding: 0;
+}
+
+.handle {
+	margin: 10px;
+	color: #125688;
+	font-weight: 600;
+	font-size: 1.2em;
+}
+
+.card p, .card .message {
+	font-size: 1.2em;
+	margin: 1.3em;
+}
+
+.card.form {
+	padding: 20px;
+}
+
+.label {
+	font-size: 1.2em;
+	font-weight: 600;
+}
+
+.input {
+	font-size: 1.2em;
+	font-weight: 400;
+}
+
+.my-btn {
+	background-color: #125688;
+	width: 100%;
+	border: none;
+	font-size: 2em;
+	color: #E2E2E2;
+	margin-top: 10px;
+	border-radius: 8px 0 8px 0;
+	padding: 6px;
+	text-shadow: 1px;
+}
+
+
+.my-btn:hover{
+    background-color: #14619A;
+    color: #fff;
+    transition: .6;
+}
+
+.field.remember {
+	margin-left: 2px;
+	margin-top: 2px;
+}
+
+.field.remember label {
+	margin-top: 5px;
+	line-height: 3.2em;
+}
+
+.gram-actions a {
+	font-weight: 600;
+	font-size: 1.1em;
+	margin-right: 20px;
+	text-decoration: none;
+}
+
+.comments {
+	padding: 20px;
+}
+
+.singleComment {
+	font-size: 1.1em;
+	margin-top: 5px;
+}
+
+.comment_handle {
+	color: #125688;
+	font-weight: 400;
+	font-size: 1.2em;
+}
+
+/*input[type="submit"]:hover{
+    background-color: #14619A;
+    color: #fff;
+    transition: .6;
+}*/
