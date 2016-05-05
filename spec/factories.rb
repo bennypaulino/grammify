@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :comment do
-    
+    message "Whatevah"
+    association :gram
+    association :user
   end
   
   factory :user do

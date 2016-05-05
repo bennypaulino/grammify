@@ -4,6 +4,9 @@ Grammify::Application.routes.draw do
   resources :grams do
     resources :comments, only: [:create]
   end
+
+  resources :comments, only: [:destroy] # As a result of not having this nested, you no longer need the gram id in the URL
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
