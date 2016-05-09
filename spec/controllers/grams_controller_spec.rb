@@ -132,6 +132,17 @@ RSpec.describe GramsController, type: :controller do
 			get :index
 			expect(response).to have_http_status(:success)
 		end
+
+		it "should list the posts sorted by newest grams to oldest grams" do
+			gram_1 = FactoryGirl.create(:gram, message: "new")
+			gram_2 = FactoryGirl.create(:gram, message: "newER")
+			gram_3 = FactoryGirl.create(:gram, message: "NEWEST")
+			
+			p grams = Gram.all
+
+			get :index
+			assigns(:grams).should eq([gram_3, gram_2, gram_1])
+		end
 	end
 
 

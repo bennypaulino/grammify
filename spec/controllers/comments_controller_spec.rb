@@ -1,7 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe CommentsController, type: :controller do
-	describe "comments#destroy action" do	
+	describe "comments#destroy action" do
+		it "SHOULD allow a user to destroy a comment ONLY under their own gram, even if they didn't author the comment" do
+			nice_gram = FactoryGirl.create(:gram)
+
+			troll_comment = FactoryGirl.create(:comment, gram: nice_gram)
+
+			sign_in nice_gram.user
+			expect {
+				delete :destroy, { id: troll_comment.id }
+			}.to change {Comment.count}.by (-1) # this works by running the blockk to check the count FIRST
+			expect(response).to redirect_to root_path
+		end
+
 		it "shouldn't allow a user to destroy a comment, if they didn't create the comment" do		
  			c = FactoryGirl.create(:comment)
  			unlucky_troll = FactoryGirl.create(:user)		
@@ -26,7 +38,7 @@ RSpec.describe CommentsController, type: :controller do
 			expect(response).to redirect_to new_user_session_path
  		end	
 
- 		it "should allow a user to destroy a comment" do		
+ 		it "should allow a user to destroy their own comment" do
  			foot_in_mouth = FactoryGirl.create(:comment)		
  			sign_in foot_in_mouth.user	
 
